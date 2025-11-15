@@ -1,304 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Mohammed Ali Portfolio</title>
 
-  <title>Mohammed Ali Personal Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" rel="icon">
-  <link href="https://media.licdn.com/dms/image/D4E03AQGwMiqoStpktA/profile-displayphoto-shrink_800_800/0/1715207199930?e=1721260800&v=beta&t=py-21c3gAb8s5LXFhklZtibwLnm1pP5htsEvGTNnCBg" rel="apple-touch-icon">
+<!-- Bootstrap & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+<style>
+:root {
+  --primary:#4b8bff;
+  --bg:#fdfdfd;
+  --card:#fff;
+  --text:#222;
+  --shadow: rgba(0,0,0,0.1);
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+header {
+  position: fixed;
+  top:0; left:0; width:100%;
+  background:#fff;
+  z-index:1000;
+  box-shadow:0 2px 10px var(--shadow);
+}
+header .nav-link {
+  color:#222;
+  font-weight:500;
+}
+header .nav-link:hover, header .nav-link.active {
+  color: var(--primary);
+}
+section {
+  padding:80px 0;
+}
+.hero {
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  height:100vh;
+  background:linear-gradient(135deg, #4b8bff33, #4b8bff11);
+  text-align:center;
+}
+.hero h1 {font-size:3rem; margin-bottom:0.5rem;}
+.hero p {font-size:1.3rem; color: #555;}
+.about-portfolio, .contact {
+  max-width:1200px; margin:auto;
+}
+.section-title {font-size:2.5rem; font-weight:700; margin-bottom:20px;}
+.section-subtitle {color:#555; margin-bottom:40px;}
+.about-wrapper {
+  display:flex; flex-wrap:wrap; gap:40px; align-items:center;
+}
+.about-text {flex:1; min-width:280px;}
+.about-img img {
+  width:100%; max-width:300px; border-radius:20px;
+  box-shadow:0 10px 30px var(--shadow);
+}
+.skills-list li {margin-bottom:10px;}
+.resume-buttons .btn {
+  margin-right:10px; padding:10px 20px; border-radius:10px;
+  background:var(--primary); color:#fff; text-decoration:none;
+}
+.projects-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:25px;
+}
+.project-card {
+  background:var(--card); border-radius:14px; overflow:hidden;
+  transition:transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+  box-shadow:0 5px 15px var(--shadow);
+}
+.project-card:hover {transform:translateY(-5px); box-shadow:0 10px 25px var(--shadow);}
+.project-card img {width:100%; border-radius:12px;}
+.project-info {padding:12px; text-align:center;}
+.project-info a {text-decoration:none; color:var(--text); font-weight:500;}
+.project-info a:hover {color:var(--primary);}
+.contact .info div {margin-bottom:20px; display:flex; align-items:center; gap:15px;}
+.contact form .form-control {border-radius:8px; padding:10px;}
+.contact form button {background:var(--primary); color:#fff; padding:10px 25px; border:none; border-radius:10px;}
+</style>
 </head>
-
 <body>
 
-  <!-- Mobile nav toggle button -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<!-- Header -->
+<header class="p-3 shadow-sm">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="#hero" class="fs-4 fw-bold">Mohammed Ali</a>
+    <nav>
+      <a href="#hero" class="nav-link d-inline-block">Home</a>
+      <a href="#about-portfolio" class="nav-link d-inline-block">About</a>
+      <a href="#projects" class="nav-link d-inline-block">Projects</a>
+      <a href="#contact" class="nav-link d-inline-block">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Header -->
-  <header id="header">
-    <div class="d-flex flex-column">
+<!-- Hero -->
+<section id="hero" class="hero">
+  <h1>Mohammed Ali</h1>
+  <p>I'm a <strong>UI/UX Designer</strong> & <strong>Flutter Developer</strong></p>
+</section>
 
-      <div class="profile">
-        <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Mohammed Ali</a></h1>
-        <h5 class="text-light">Flutter Developer || UI/UX Designer</h5>
-        <div class="social-links mt-3 text-center">
-          <a href="https://web.facebook.com/profile.php?id=100011987585933" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://github.com/MohammedRostom" target="_blank" class="instagram"><i class="bx bxl-github"></i></a>
-          <a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
-          <a href="https://www.behance.net/mohamed255" target="_blank" class="linkedin"><i class="bx bxl-behance"></i></a>
-          <a href="https://www.linkedin.com/in/mhmed-rustom-b85607214" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
+<main>
+
+<!-- About -->
+<section id="about-portfolio" class="about-portfolio">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-wrapper">
+    <div class="about-text">
+      <p>Hello! I'm <strong>Mohamed Ali</strong>, a Flutter Developer & UI/UX Designer passionate about creating seamless user experiences.</p>
+      <ul class="skills-list">
+        <li>UI/UX Design: Creating user-centric, visually modern interfaces.</li>
+        <li>Flutter Development: Building scalable & responsive mobile apps.</li>
+      </ul>
+      <div class="resume-buttons">
+        <a href="#" class="btn">Flutter CV</a>
+        <a href="#" class="btn">UI/UX CV</a>
       </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about-portfolio" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#about-portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Mohammed Ali</h1>
-      <p>I'm <span class="typed" data-typed-items="UI/UX Designer,Flutter Developer"></span></p>
+    <div class="about-img">
+      <img src="https://avatars.githubusercontent.com/u/92746046?v=4" alt="profile">
     </div>
-  </section>
+  </div>
+</section>
 
-  <main id="main">
+<!-- Projects -->
+<section id="projects" class="about-portfolio">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">Some examples of my UI/UX case studies and Flutter applications</p>
+  <div class="filters mb-4">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ui">UI/UX</button>
+    <button class="filter-btn" data-filter="flutter">Flutter Apps</button>
+  </div>
+  <div class="projects-grid">
+    <!-- Example project -->
+    <div class="project-card ui">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/b9fa9e237207751.68fb9568c5857.png" alt="Islamic App" />
+      <div class="project-info"><a href="#">Islamic App</a></div>
+    </div>
+    <div class="project-card flutter">
+      <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Chat-Ai" />
+      <div class="project-info"><a href="#">Chat-Ai</a></div>
+    </div>
+    <!-- Add more projects similarly -->
+  </div>
+</section>
 
-    <!-- About & Portfolio Section -->
-    <section id="about-portfolio" class="about-portfolio">
-      <div class="container">
-
-        <!-- About Me -->
-        <div class="about-wrapper" data-aos="fade-up">
-          <div class="about-text">
-            <h2 class="section-title">About Me</h2>
-            <p>Hello! I'm <strong>Mohamed Ali</strong>, a Flutter Developer & UI/UX Designer passionate about crafting seamless user experiences.</p>
-            <ul class="skills-list">
-              <li><strong>UI/UX Design:</strong> Creating user-centric, visually modern interfaces.</li>
-              <li><strong>Flutter Development:</strong> Building scalable & responsive mobile apps with clean architecture.</li>
-            </ul>
-            <p>Proficient in Bloc/Cubit state management and Backend-as-a-Service (BaaS). I believe great products come from passion, precision, and empathy for the user.</p>
-            <div class="resume-buttons">
-              <a href="#" class="btn primary"><i class="bi bi-download"></i> Flutter CV</a>
-              <a href="#" class="btn primary"><i class="bi bi-download"></i> UI/UX CV</a>
-            </div>
-          </div>
-          <div class="about-img">
-            <img src="https://avatars.githubusercontent.com/u/92746046?v=4" alt="profile" />
-          </div>
-        </div>
-
-        <!-- Portfolio -->
-        <div class="portfolio-wrapper" data-aos="fade-up">
-          <h2 class="section-title">Projects</h2>
-          <p class="section-subtitle">Some examples of my UI/UX case studies and Flutter applications</p>
-          <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ui">UI/UX</button>
-            <button class="filter-btn" data-filter="flutter">Flutter Apps</button>
-          </div>
-
-          <div class="projects-grid">
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/b9fa9e237207751.68fb9568c5857.png" alt="Islamic App" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/237207751/Islmic-app-()">Islamic App</a></div>
-            </div>
-            
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Chat-Ai" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/Chat-Ai">Chat-Ai</a></div>
-            </div>
-            
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/baaec2238575793.Y3JvcCwyNTc0LDIwMTQsMTk3LDA.png" alt="Landing Page ERP" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/238575793/Cloud-ERP-Landing-page-(ERP-SaaS)">Landing page (ERP SaaS)</a></div>
-            </div>
-
- 
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="E_Book-Store" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/E_Book-Store">E_Book-Store</a></div>
-            </div>
-            
-            
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/404/07f2d1217729425.Y3JvcCwyNzMwLDIxMzYsMTAxLDA.png" alt="Elyaf Academy" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/217729425/UI-Case-study-(elyaf-academy)">Elyaf Academy (LMS)</a></div>
-            </div>
-
-          
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/MusicApp_Audio-Access_Storage">Music App</a></div>
-            </div>
-         
-            <div class="project-card ui">
-              <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/Screenshot%202024-12-04%20015514.jpg" alt="EgClub" />
-              <div class="project-info"><a href="#">EgClub (NDA)</a></div>
-            </div>
-
-
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/QuranyApp">Qurany App</a></div>
-            </div>
-            
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/b7752f215470989.Y3JvcCwyNjA1LDIwMzgsMTYxLDA.png" alt="Prime Style" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/215470989/Vodafone-redesign">Vodafone Redesign</a></div>
-            </div>
-
-            
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/Trendy-Buy">Trendy-Buy</a></div>
-            </div>
-
-      
-            
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/616bfe222462957.67e62611945a2.png" alt="Prime Style" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/222462957/Prime-Style-fashion-app-UIUX-case-study">Prime Style</a></div>
-            </div>
-
-
-            
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/E_commerceApp-SOUQLY-">E_commerceApp-SOUQLY</a></div>
-            </div>
-
-
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/808/593cc4213960757.Y3JvcCwyMTg2LDE3MDksMCww.png" alt="Real Estate" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/213960757/UIUX-Casstudy-Real-estate-(Sakkny)">Real Estate</a></div>
-            </div>
-
-            
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
-              <div class="project-info"><a href="https://github.com/MohammedRostom/Note_AppWith_Hive">Note_AppWith_Hive</a></div>
-            </div>
-            
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/fcb8a0178489609.Y3JvcCwxMDgyLDg0Niw4MywyNg.png" alt="Prime Style" />
-              <div class="project-info"><a href="https://www.behance.net/gallery/178489609/-()-Casestudy">Alaamny (LMS)</a></div>
-            </div>
-            
-    
-          </div>
-        </div>
-
+<!-- Contact -->
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <div class="info">
+        <div><i class="bi bi-geo-alt fs-4"></i> <div><h5>Location</h5><p>Egypt, Assiut</p></div></div>
+        <div><i class="bi bi-envelope fs-4"></i> <div><h5>Email</h5><p>Mohammedrostom011@gmail.com</p></div></div>
+        <div><i class="bi bi-phone fs-4"></i> <div><h5>Call</h5><p>01033251239</p></div></div>
+        <div><i class="bi bi-whatsapp fs-4"></i> <div><h5>WhatsApp</h5><a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank">Contact me</a></div></div>
       </div>
-    </section>
-
-
-    
-    <!-- About & Portfolio Styling -->
-    <style>
-      :root {--bg:#fff;--text:#222;--card:#f6f6f6;--primary:#4b8bff;}
-      [data-theme="dark"] {--bg:#0f0f0f;--text:#e6e6e6;--card:#1a1a1a;--primary:#4b8bff;}
-      body{background:var(--bg);color:var(--text);font-family:"Poppins",sans-serif;}
-      .about-portfolio .section-title{font-size:32px;font-weight:700;margin-bottom:15px;}
-      .about-wrapper{display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:40px 0;}
-      .about-text{flex:1;min-width:280px;}
-      .about-img img{width:280px;border-radius:20px;box-shadow:0 4px 20px #00000020;}
-      .skills-list li{margin-bottom:10px;}
-      .resume-buttons .btn{margin-right:10px;padding:10px 18px;border-radius:10px;background:var(--primary);color:white;text-decoration:none;}
-      .filters{display:flex;gap:15px;margin-bottom:25px;flex-wrap:wrap;}
-      .filter-btn{background:var(--card);padding:8px 16px;border-radius:8px;border:none;cursor:pointer;color:var(--text);}
-      .filter-btn.active{background:var(--primary);color:white;}
-      .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
-      .project-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.3s;cursor:pointer;}
-      .project-card:hover{transform:translateY(-5px);}
-      .project-card img{width:100%;border-radius:12px;}
-      .project-info{padding:10px;text-align:center;}
-      .project-info a{color:var(--text);text-decoration:none;font-weight:500;}
-      .project-info a:hover{color:var(--primary);}
-    </style>
-
-    <!-- Portfolio Filtering JS -->
-    <script>
-      const buttons = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.project-card');
-      buttons.forEach(btn=>{
-        btn.addEventListener('click',()=>{
-          document.querySelector('.filter-btn.active').classList.remove('active');
-          btn.classList.add('active');
-          const filter = btn.getAttribute('data-filter');
-          cards.forEach(card=>{
-            if(filter==='all'||card.classList.contains(filter)){card.style.display='block';}
-            else{card.style.display='none';}
-          });
-        });
-      });
-    </script>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Contact me easily!</p>
-        </div>
-        <div class="row" data-aos="fade-in">
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address"><i class="bi bi-geo-alt"></i><h4>Location:</h4><p>Egypt , Assiut</p></div>
-              <div class="email"><i class="bi bi-envelope"></i><h4>Email:</h4><p>Mohammedrostom011@gmail.com</p></div>
-              <div class="phone"><i class="bi bi-phone"></i><h4>Call:</h4><p>01033251239</p></div>
-              <div class="phone"><a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank"><i class="bi bi-whatsapp"></i><h4>WhatsApp:</h4><p>WhatsApp Contact</p></a></div>
-            </div>
-          </div>
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="mailto:Mohammedrostom011@gmail.com" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6"><label for="name">Your Name</label><input type="text" name="name" class="form-control" id="name" required></div>
-                <div class="form-group col-md-6"><label for="email">Your Email</label><input type="email" class="form-control" name="_replyto" id="email" required></div>
-              </div>
-              <div class="form-group"><label for="subject">Subject</label><input type="text" class="form-control" name="subject" id="subject" required></div>
-              <div class="form-group"><label for="message">Message</label><textarea class="form-control" name="message" id="message" rows="10" required></textarea></div>
-              <div class="my-3"><div class="loading">Loading</div><div class="error-message"></div><div class="sent-message">Your message has been sent. Thank you!</div></div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">&copy; Copyright <strong><span>2024</span></strong></div>
-      <div class="credits">Designed by <a href="https://bootstrapmade.com/">MohammedRostom</a></div>
     </div>
-  </footer>
+    <div class="col-lg-7">
+      <form action="mailto:Mohammedrostom011@gmail.com" method="post" class="php-email-form">
+        <div class="row">
+          <div class="col-md-6 mb-3"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+          <div class="col-md-6 mb-3"><input type="email" name="_replyto" class="form-control" placeholder="Your Email" required></div>
+        </div>
+        <input type="text" name="subject" class="form-control mb-3" placeholder="Subject" required>
+        <textarea name="message" rows="8" class="form-control mb-3" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</main>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+<!-- Scripts -->
+<script>
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.project-card');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.filter-btn.active').classList.remove('active');
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    cards.forEach(card => {
+      if(filter==='all'||card.classList.contains(filter)) card.style.display='block';
+      else card.style.display='none';
+    });
+  });
+});
+</script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
