@@ -5,243 +5,343 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Mohammed Ali Personal Portfolio</title>
+  <title>Mohammed Ali Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" rel="icon">
-  <link href="https://media.licdn.com/dms/image/D4E03AQGwMiqoStpktA/profile-displayphoto-shrink_800_800/0/1715207199930?e=1721260800&v=beta&t=py-21c3gAb8s5LXFhklZtibwLnm1pP5htsEvGTNnCBg" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222;
+      --card: #f6f6f6;
+      --primary: #4b8bff;
+      --secondary: #555;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f0f0f;
+      --text: #e6e6e6;
+      --card: #1a1a1a;
+      --primary: #4b8bff;
+      --secondary: #aaa;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      transition: background 0.4s;
+    }
+
+    .profile img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .profile h1 a {
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .profile h5 {
+      color: var(--secondary);
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .social-links a {
+      color: var(--text);
+      font-size: 18px;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    nav ul li {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    nav ul li a {
+      display: flex;
+      align-items: center;
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    nav ul li a i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 80px 40px 40px 40px;
+      max-width: 1200px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-right: 10px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #0066ff;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .project-info {
+      padding: 12px;
+      text-align: center;
+    }
+
+    .project-info a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .project-info a:hover {
+      color: var(--primary);
+    }
+
+    #dark-mode-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    #dark-mode-toggle:hover {
+      background: #0066ff;
+    }
+
+    /* Mobile Navbar */
+    @media (max-width: 991px) {
+      header {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 100px 20px 20px 20px;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+      }
+
+      nav ul li a {
+        padding: 8px 12px;
+      }
+
+      .profile h1,
+      .profile h5 {
+        font-size: 16px;
+      }
+
+      .social-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Mobile nav toggle button -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- Header -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Mohammed Ali</a></h1>
-        <h5 class="text-light">Flutter Developer || UI/UX Designer</h5>
-        <div class="social-links mt-3 text-center">
-          <a href="https://web.facebook.com/profile.php?id=100011987585933" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://github.com/MohammedRostom" target="_blank" class="instagram"><i class="bx bxl-github"></i></a>
-          <a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
-          <a href="https://www.behance.net/mohamed255" target="_blank" class="linkedin"><i class="bx bxl-behance"></i></a>
-          <a href="https://www.linkedin.com/in/mhmed-rustom-b85607214" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about-portfolio" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#about-portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav>
+  <header>
+    <div class="profile">
+      <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="profile">
+      <h1><a href="#">Mohammed Ali</a></h1>
+      <h5>Flutter Developer || UI/UX Designer</h5>
     </div>
+
+    <nav>
+      <ul>
+        <li><a href="#hero" class="active"><i class="bx bx-home"></i> Home</a></li>
+        <li><a href="#about"><i class="bx bx-user"></i> About</a></li>
+        <li><a href="#portfolio"><i class="bx bx-book-content"></i> Projects</a></li>
+        <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Mohammed Ali</h1>
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="fade-in">
+      <h1>Hello, I'm Mohammed Ali</h1>
       <p>I'm <span class="typed" data-typed-items="UI/UX Designer,Flutter Developer"></span></p>
-    </div>
-  </section>
+    </section>
 
-  <main id="main">
-
-    <!-- About & Portfolio Section -->
-    <section id="about-portfolio" class="about-portfolio">
-      <div class="container">
-
-        <!-- About Me -->
-        <div class="about-wrapper" data-aos="fade-up">
-          <div class="about-text">
-            <h2 class="section-title">About Me</h2>
-            <p>Hello! I'm <strong>Mohamed Ali</strong>, a Flutter Developer & UI/UX Designer passionate about crafting seamless user experiences.</p>
-            <ul class="skills-list">
-              <li><strong>UI/UX Design:</strong> Creating user-centric, visually modern interfaces.</li>
-              <li><strong>Flutter Development:</strong> Building scalable & responsive mobile apps with clean architecture.</li>
-            </ul>
-            <p>Proficient in Bloc/Cubit state management and Backend-as-a-Service (BaaS). I believe great products come from passion, precision, and empathy for the user.</p>
-            <div class="resume-buttons">
-              <a href="#" class="btn primary"><i class="bi bi-download"></i> Flutter CV</a>
-              <a href="#" class="btn primary"><i class="bi bi-download"></i> UI/UX CV</a>
-            </div>
-          </div>
-          <div class="about-img">
-            <img src="https://avatars.githubusercontent.com/u/92746046?v=4" alt="profile" />
-          </div>
-        </div>
-
-        <!-- Portfolio -->
-        <div class="portfolio-wrapper" data-aos="fade-up">
-          <h2 class="section-title">Projects</h2>
-          <p class="section-subtitle">Some examples of my UI/UX case studies and Flutter applications</p>
-          <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ui">UI/UX</button>
-            <button class="filter-btn" data-filter="flutter">Flutter Apps</button>
-          </div>
-
-          <div class="projects-grid">
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/b9fa9e237207751.68fb9568c5857.png" alt="Islamic App" />
-              <div class="project-info"><a href="#">Islamic App</a></div>
-            </div>
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Chat-Ai" />
-              <div class="project-info"><a href="#">Chat-Ai</a></div>
-            </div>
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/baaec2238575793.Y3JvcCwyNTc0LDIwMTQsMTk3LDA.png" alt="Landing Page ERP" />
-              <div class="project-info"><a href="#">Landing page (ERP SaaS)</a></div>
-            </div>
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/808/593cc4213960757.Y3JvcCwyMTg2LDE3MDksMCww.png" alt="Real Estate" />
-              <div class="project-info"><a href="#">Real Estate</a></div>
-            </div>
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="E_Book-Store" />
-              <div class="project-info"><a href="#">E_Book-Store</a></div>
-            </div>
-            <div class="project-card ui">
-              <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/Screenshot%202024-12-04%20015514.jpg" alt="EgClub" />
-              <div class="project-info"><a href="#">EgClub</a></div>
-            </div>
-            <div class="project-card flutter">
-              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
-              <div class="project-info"><a href="#">Music App</a></div>
-            </div>
-            <div class="project-card ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/616bfe222462957.67e62611945a2.png" alt="Prime Style" />
-              <div class="project-info"><a href="#">Prime Style</a></div>
-            </div>
-          </div>
-        </div>
-
+    <!-- About -->
+    <section id="about" class="fade-in">
+      <h2 class="section-title">About Me</h2>
+      <p>Hello! I'm <strong>Mohammed Ali</strong>, a Flutter Developer & UI/UX Designer passionate about crafting seamless user experiences.</p>
+      <ul class="skills-list">
+        <li>UI/UX Design - Creating user-centric, visually modern interfaces.</li>
+        <li>Flutter Development - Building scalable & responsive mobile apps.</li>
+      </ul>
+      <div class="resume-buttons">
+        <a href="#" class="btn-primary">Flutter CV</a>
+        <a href="#" class="btn-primary">UI/UX CV</a>
       </div>
     </section>
 
-    <!-- About & Portfolio Styling -->
-    <style>
-      :root {--bg:#fff;--text:#222;--card:#f6f6f6;--primary:#4b8bff;}
-      [data-theme="dark"] {--bg:#0f0f0f;--text:#e6e6e6;--card:#1a1a1a;--primary:#4b8bff;}
-      body{background:var(--bg);color:var(--text);font-family:"Poppins",sans-serif;}
-      .about-portfolio .section-title{font-size:32px;font-weight:700;margin-bottom:15px;}
-      .about-wrapper{display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:40px 0;}
-      .about-text{flex:1;min-width:280px;}
-      .about-img img{width:280px;border-radius:20px;box-shadow:0 4px 20px #00000020;}
-      .skills-list li{margin-bottom:10px;}
-      .resume-buttons .btn{margin-right:10px;padding:10px 18px;border-radius:10px;background:var(--primary);color:white;text-decoration:none;}
-      .filters{display:flex;gap:15px;margin-bottom:25px;flex-wrap:wrap;}
-      .filter-btn{background:var(--card);padding:8px 16px;border-radius:8px;border:none;cursor:pointer;color:var(--text);}
-      .filter-btn.active{background:var(--primary);color:white;}
-      .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
-      .project-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.3s;cursor:pointer;}
-      .project-card:hover{transform:translateY(-5px);}
-      .project-card img{width:100%;border-radius:12px;}
-      .project-info{padding:10px;text-align:center;}
-      .project-info a{color:var(--text);text-decoration:none;font-weight:500;}
-      .project-info a:hover{color:var(--primary);}
-    </style>
-
-    <!-- Portfolio Filtering JS -->
-    <script>
-      const buttons = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.project-card');
-      buttons.forEach(btn=>{
-        btn.addEventListener('click',()=>{
-          document.querySelector('.filter-btn.active').classList.remove('active');
-          btn.classList.add('active');
-          const filter = btn.getAttribute('data-filter');
-          cards.forEach(card=>{
-            if(filter==='all'||card.classList.contains(filter)){card.style.display='block';}
-            else{card.style.display='none';}
-          });
-        });
-      });
-    </script>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Contact me easily!</p>
-        </div>
-        <div class="row" data-aos="fade-in">
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address"><i class="bi bi-geo-alt"></i><h4>Location:</h4><p>Egypt , Assiut</p></div>
-              <div class="email"><i class="bi bi-envelope"></i><h4>Email:</h4><p>Mohammedrostom011@gmail.com</p></div>
-              <div class="phone"><i class="bi bi-phone"></i><h4>Call:</h4><p>01033251239</p></div>
-              <div class="phone"><a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank"><i class="bi bi-whatsapp"></i><h4>WhatsApp:</h4><p>WhatsApp Contact</p></a></div>
-            </div>
-          </div>
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="mailto:Mohammedrostom011@gmail.com" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6"><label for="name">Your Name</label><input type="text" name="name" class="form-control" id="name" required></div>
-                <div class="form-group col-md-6"><label for="email">Your Email</label><input type="email" class="form-control" name="_replyto" id="email" required></div>
-              </div>
-              <div class="form-group"><label for="subject">Subject</label><input type="text" class="form-control" name="subject" id="subject" required></div>
-              <div class="form-group"><label for="message">Message</label><textarea class="form-control" name="message" id="message" rows="10" required></textarea></div>
-              <div class="my-3"><div class="loading">Loading</div><div class="error-message"></div><div class="sent-message">Your message has been sent. Thank you!</div></div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-        </div>
+    <!-- Portfolio -->
+    <section id="portfolio" class="fade-in">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-in"><a href="https://example.com/islamic-app" target="_blank"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/b9fa9e237207751.68fb9568c5857.png" alt=""><div class="project-info"><span>Islamic App</span></div></a></div>
+        <div class="project-card fade-in"><a href="https://example.com/chat-ai" target="_blank"><img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt=""><div class="project-info"><span>Chat-AI</span></div></a></div>
+        <div class="project-card fade-in"><a href="https://example.com/landing-page" target="_blank"><img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/baaec2238575793.Y3JvcCwyNTc0LDIwMTQsMTk3LDA.png" alt=""><div class="project-info"><span>Landing Page (ERP)</span></div></a></div>
       </div>
     </section>
 
+    <!-- Contact -->
+    <section id="contact" class="fade-in">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: Mohammedrostom011@gmail.com</p>
+      <p>Phone: 01033251239</p>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">&copy; Copyright <strong><span>2024</span></strong></div>
-      <div class="credits">Designed by <a href="https://bootstrapmade.com/">MohammedRostom</a></div>
-    </div>
-  </footer>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle">🌙</button>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+  <script>
+    // Typed JS
+    new Typed('.typed', {
+      strings: document.querySelector('.typed').dataset.typedItems.split(','),
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true
+    });
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    // Fade-in sections on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    // Dark Mode Toggle
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+    });
+  </script>
 
 </body>
-
 </html>
