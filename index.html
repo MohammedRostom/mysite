@@ -26,6 +26,331 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --bg: #fefefe;
+      --text: #222;
+      --card: #fff;
+      --primary: #4b8bff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f0f0f;
+      --text: #e6e6e6;
+      --card: #1a1a1a;
+      --primary: #4b8bff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    #header {
+      width: 260px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: var(--card);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.05);
+      z-index: 999;
+    }
+
+    #header .profile img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    #header .social-links a {
+      font-size: 18px;
+      margin: 0 5px;
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    #header .social-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Navbar */
+    .nav-menu ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .nav-menu ul li {
+      margin: 10px 0;
+    }
+
+    .nav-menu ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .nav-menu ul li a.active,
+    .nav-menu ul li a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .nav-menu i {
+      margin-right: 8px;
+    }
+
+    /* Hero */
+    #hero {
+      margin-left: 260px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--card);
+    }
+
+    #hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    #hero p {
+      font-size: 22px;
+      color: var(--text);
+    }
+
+    /* Section Titles */
+    section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    section p.section-subtitle {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #666;
+    }
+
+    /* About Section */
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 0;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+    .skills-list {
+      list-style: disc inside;
+      margin-bottom: 20px;
+    }
+
+    .resume-buttons a {
+      margin-right: 10px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .resume-buttons a:hover {
+      opacity: 0.9;
+    }
+
+    .about-img img {
+      width: 280px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Portfolio Section */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      background: var(--card);
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      color: var(--text);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.3s;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .project-info {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .project-info a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project-info a:hover {
+      color: var(--primary);
+    }
+
+    /* Contact Section */
+    .contact .info {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      width: 100%;
+    }
+
+    .contact .info div {
+      margin-bottom: 20px;
+    }
+
+    .contact .info i {
+      font-size: 24px;
+      color: var(--primary);
+      margin-right: 10px;
+    }
+
+    .php-email-form input,
+    .php-email-form textarea {
+      width: 100%;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .php-email-form button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .php-email-form button:hover {
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    #footer {
+      background: var(--card);
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: var(--primary);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .back-to-top:hover {
+      opacity: 0.9;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      #header {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 30px;
+      }
+
+      #hero {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -35,10 +360,9 @@
 
   <!-- Header -->
   <header id="header">
-    <div class="d-flex flex-column">
-
+    <div class="d-flex flex-column align-items-center">
       <div class="profile">
-        <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="" class="img-fluid rounded-circle">
+        <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="profile">
         <h1 class="text-light"><a href="index.html">Mohammed Ali</a></h1>
         <h5 class="text-light">Flutter Developer || UI/UX Designer</h5>
         <div class="social-links mt-3 text-center">
@@ -69,8 +393,8 @@
     </div>
   </section>
 
+  <!-- Main Content -->
   <main id="main">
-
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
@@ -84,8 +408,8 @@
             </ul>
             <p>Proficient in Bloc/Cubit state management and Backend-as-a-Service (BaaS). I believe great products come from passion, precision, and empathy for the user.</p>
             <div class="resume-buttons">
-              <a href="#" class="btn primary"><i class="bi bi-download"></i> Flutter CV</a>
-              <a href="#" class="btn primary"><i class="bi bi-download"></i> UI/UX CV</a>
+              <a href="#"><i class="bi bi-download"></i> Flutter CV</a>
+              <a href="#"><i class="bi bi-download"></i> UI/UX CV</a>
             </div>
           </div>
           <div class="about-img">
@@ -107,7 +431,7 @@
         </div>
 
         <div class="projects-grid">
-          <!-- Projects Cards هنا -->
+          <!-- هنا ممكن تحط Project Cards بدون تغيير الروابط -->
         </div>
       </div>
     </section>
@@ -156,35 +480,3 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Portfolio Filtering JS -->
-  <script>
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.project-card');
-    buttons.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        document.querySelector('.filter-btn.active').classList.remove('active');
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-        cards.forEach(card=>{
-          card.style.display = (filter === 'all' || card.classList.contains(filter)) ? 'block' : 'none';
-        });
-      });
-    });
-  </script>
-
-</body>
-</html>
