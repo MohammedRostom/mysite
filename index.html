@@ -3,18 +3,18 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Mohammed Ali Personal Portfolio</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" rel="icon">
   <link href="https://media.licdn.com/dms/image/D4E03AQGwMiqoStpktA/profile-displayphoto-shrink_800_800/0/1715207199930?e=1721260800&v=beta&t=py-21c3gAb8s5LXFhklZtibwLnm1pP5htsEvGTNnCBg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -26,331 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- Custom Styles -->
-  <style>
-    :root {
-      --bg: #fefefe;
-      --text: #222;
-      --card: #fff;
-      --primary: #4b8bff;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0f0f0f;
-      --text: #e6e6e6;
-      --card: #1a1a1a;
-      --primary: #4b8bff;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Poppins", sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    /* Header */
-    #header {
-      width: 260px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: var(--card);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.05);
-      z-index: 999;
-    }
-
-    #header .profile img {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-
-    #header .social-links a {
-      font-size: 18px;
-      margin: 0 5px;
-      color: var(--text);
-      transition: 0.3s;
-    }
-
-    #header .social-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Navbar */
-    .nav-menu ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 30px;
-      width: 100%;
-    }
-
-    .nav-menu ul li {
-      margin: 10px 0;
-    }
-
-    .nav-menu ul li a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      padding: 8px 15px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .nav-menu ul li a.active,
-    .nav-menu ul li a:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .nav-menu i {
-      margin-right: 8px;
-    }
-
-    /* Hero */
-    #hero {
-      margin-left: 260px;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: var(--card);
-    }
-
-    #hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
-
-    #hero p {
-      font-size: 22px;
-      color: var(--text);
-    }
-
-    /* Section Titles */
-    section h2 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    section p.section-subtitle {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #666;
-    }
-
-    /* About Section */
-    .about-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 0;
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 280px;
-      max-width: 500px;
-    }
-
-    .about-text p {
-      margin-bottom: 15px;
-    }
-
-    .skills-list {
-      list-style: disc inside;
-      margin-bottom: 20px;
-    }
-
-    .resume-buttons a {
-      margin-right: 10px;
-      padding: 10px 18px;
-      border-radius: 10px;
-      background: var(--primary);
-      color: #fff;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-      transition: 0.3s;
-    }
-
-    .resume-buttons a:hover {
-      opacity: 0.9;
-    }
-
-    .about-img img {
-      width: 280px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Portfolio Section */
-    .filters {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .filter-btn {
-      background: var(--card);
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      color: var(--text);
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .filter-btn.active {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    .project-card {
-      background: var(--card);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: 0.3s;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .project-info {
-      padding: 10px;
-      text-align: center;
-    }
-
-    .project-info a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .project-info a:hover {
-      color: var(--primary);
-    }
-
-    /* Contact Section */
-    .contact .info {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      width: 100%;
-    }
-
-    .contact .info div {
-      margin-bottom: 20px;
-    }
-
-    .contact .info i {
-      font-size: 24px;
-      color: var(--primary);
-      margin-right: 10px;
-    }
-
-    .php-email-form input,
-    .php-email-form textarea {
-      width: 100%;
-      padding: 10px 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      background: var(--card);
-      color: var(--text);
-    }
-
-    .php-email-form button {
-      padding: 10px 25px;
-      border: none;
-      border-radius: 8px;
-      background: var(--primary);
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .php-email-form button:hover {
-      opacity: 0.9;
-    }
-
-    /* Footer */
-    #footer {
-      background: var(--card);
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 60px;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .back-to-top {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: var(--primary);
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.3s;
-      z-index: 999;
-    }
-
-    .back-to-top:hover {
-      opacity: 0.9;
-    }
-
-    /* Responsive */
-    @media (max-width: 991px) {
-      #header {
-        position: relative;
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15px 30px;
-      }
-
-      #hero {
-        margin-left: 0;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -360,16 +35,17 @@
 
   <!-- Header -->
   <header id="header">
-    <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column">
+
       <div class="profile">
-        <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="profile">
+        <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/img/photo_2024-11-08_13-21-33.png" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Mohammed Ali</a></h1>
         <h5 class="text-light">Flutter Developer || UI/UX Designer</h5>
         <div class="social-links mt-3 text-center">
           <a href="https://web.facebook.com/profile.php?id=100011987585933" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://github.com/MohammedRostom" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-          <a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-          <a href="https://www.behance.net/mohamed255" target="_blank" class="behance"><i class="bx bxl-behance"></i></a>
+          <a href="https://github.com/MohammedRostom" target="_blank" class="instagram"><i class="bx bxl-github"></i></a>
+          <a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
+          <a href="https://www.behance.net/mohamed255" target="_blank" class="linkedin"><i class="bx bxl-behance"></i></a>
           <a href="https://www.linkedin.com/in/mhmed-rustom-b85607214" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
@@ -377,8 +53,8 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+          <li><a href="#about-portfolio" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#about-portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav>
@@ -393,48 +69,180 @@
     </div>
   </section>
 
-  <!-- Main Content -->
   <main id="main">
-    <!-- About Section -->
+
+    <!-- About & Portfolio Section -->
     <section id="about" class="about">
       <div class="container">
+
+        <!-- About Me -->
         <div class="about-wrapper" data-aos="fade-up">
           <div class="about-text">
             <h2>About Me</h2>
-            <p>Hello! I'm <strong>Mohammed Ali</strong>, a Flutter Developer & UI/UX Designer passionate about crafting seamless user experiences.</p>
+            <p>Hello! I'm <strong>Mohamed Ali</strong>, a Flutter Developer & UI/UX Designer passionate about crafting seamless user experiences.</p>
             <ul class="skills-list">
               <li><strong>UI/UX Design:</strong> Creating user-centric, visually modern interfaces.</li>
               <li><strong>Flutter Development:</strong> Building scalable & responsive mobile apps with clean architecture.</li>
             </ul>
             <p>Proficient in Bloc/Cubit state management and Backend-as-a-Service (BaaS). I believe great products come from passion, precision, and empathy for the user.</p>
             <div class="resume-buttons">
-              <a href="#"><i class="bi bi-download"></i> Flutter CV</a>
-              <a href="#"><i class="bi bi-download"></i> UI/UX CV</a>
+              <a href="#" class="btn primary"><i class="bi bi-download"></i> Flutter CV</a>
+              <a href="#" class="btn primary"><i class="bi bi-download"></i> UI/UX CV</a>
             </div>
           </div>
           <div class="about-img">
             <img src="https://avatars.githubusercontent.com/u/92746046?v=4" alt="profile" />
           </div>
         </div>
+   </section>
+
+        <!-- Portfolio -->
+       <section id="portfolio" class="portfolio">
+        <div class="portfolio-wrapper" data-aos="fade-up">
+          <h2>Projects</h2>
+          <p class="section-subtitle">Some examples of my UI/UX case studies and Flutter applications</p>
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ui">UI/UX</button>
+            <button class="filter-btn" data-filter="flutter">Flutter Apps</button>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/b9fa9e237207751.68fb9568c5857.png" alt="Islamic App" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/237207751/Islmic-app-()">Islamic App</a></div>
+            </div>
+            
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Chat-Ai" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/Chat-Ai">Chat-Ai</a></div>
+            </div>
+            
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/baaec2238575793.Y3JvcCwyNTc0LDIwMTQsMTk3LDA.png" alt="Landing Page ERP" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/238575793/Cloud-ERP-Landing-page-(ERP-SaaS)">Landing page (ERP SaaS)</a></div>
+            </div>
+
+ 
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="E_Book-Store" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/E_Book-Store">E_Book-Store</a></div>
+            </div>
+            
+            
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/404/07f2d1217729425.Y3JvcCwyNzMwLDIxMzYsMTAxLDA.png" alt="Elyaf Academy" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/217729425/UI-Case-study-(elyaf-academy)">Elyaf Academy (LMS)</a></div>
+            </div>
+
+          
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/MusicApp_Audio-Access_Storage">Music App</a></div>
+            </div>
+         
+            <div class="project-card ui">
+              <img src="https://raw.githubusercontent.com/MohammedRostom/mysite/refs/heads/main/assets/Screenshot%202024-12-04%20015514.jpg" alt="EgClub" />
+              <div class="project-info"><a href="#">EgClub (NDA)</a></div>
+            </div>
+
+
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/QuranyApp">Qurany App</a></div>
+            </div>
+            
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/b7752f215470989.Y3JvcCwyNjA1LDIwMzgsMTYxLDA.png" alt="Prime Style" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/215470989/Vodafone-redesign">Vodafone Redesign</a></div>
+            </div>
+
+            
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/Trendy-Buy">Trendy-Buy</a></div>
+            </div>
+
+      
+            
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/616bfe222462957.67e62611945a2.png" alt="Prime Style" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/222462957/Prime-Style-fashion-app-UIUX-case-study">Prime Style</a></div>
+            </div>
+
+
+            
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/E_commerceApp-SOUQLY-">E_commerceApp-SOUQLY</a></div>
+            </div>
+
+
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/808/593cc4213960757.Y3JvcCwyMTg2LDE3MDksMCww.png" alt="Real Estate" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/213960757/UIUX-Casstudy-Real-estate-(Sakkny)">Real Estate</a></div>
+            </div>
+
+            
+            <div class="project-card flutter">
+              <img src="https://cdn.shopaccino.com/igmguru/products/flutter-igmguru_1527424732_xl.jpg?v=532" alt="Music App" />
+              <div class="project-info"><a href="https://github.com/MohammedRostom/Note_AppWith_Hive">Note_AppWith_Hive</a></div>
+            </div>
+            
+            <div class="project-card ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/fcb8a0178489609.Y3JvcCwxMDgyLDg0Niw4MywyNg.png" alt="Prime Style" />
+              <div class="project-info"><a href="https://www.behance.net/gallery/178489609/-()-Casestudy">Alaamny (LMS)</a></div>
+            </div>
+            
+    
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p class="section-subtitle">Some examples of my UI/UX case studies and Flutter applications</p>
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ui">UI/UX</button>
-          <button class="filter-btn" data-filter="flutter">Flutter Apps</button>
-        </div>
 
-        <div class="projects-grid">
-          <!-- هنا ممكن تحط Project Cards بدون تغيير الروابط -->
-        </div>
-      </div>
-    </section>
+    
+    <!-- About  -->
+    <style>
+      :root {--bg:#fff;--text:#222;--card:#f6f6f6;--primary:#4b8bff;}
+      [data-theme="dark"] {--bg:#0f0f0f;--text:#e6e6e6;--card:#1a1a1a;--primary:#4b8bff;}
+      body{background:var(--bg);color:var(--text);font-family:"Poppins",sans-serif;}
+      .about .section-title{font-size:32px;font-weight:700;margin-bottom:15px;}
+      .portfolio .section-title{font-size:32px;font-weight:700;margin-bottom:15px;}
+      .about-wrapper{display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:40px 0;}
+      .about-text{flex:1;min-width:280px;}
+      .about-img img{width:280px;border-radius:20px;box-shadow:0 4px 20px #00000020;}
+      .skills-list li{margin-bottom:10px;}
+      .resume-buttons .btn{margin-right:10px;padding:10px 18px;border-radius:10px;background:var(--primary);color:white;text-decoration:none;}
+      .filters{display:flex;gap:15px;margin-bottom:25px;flex-wrap:wrap;}
+      .filter-btn{background:var(--card);padding:8px 16px;border-radius:8px;border:none;cursor:pointer;color:var(--text);}
+      .filter-btn.active{background:var(--primary);color:white;}
+      .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+      .project-card{background:var(--card);border-radius:14px;overflow:hidden;transition:.3s;cursor:pointer;}
+      .project-card:hover{transform:translateY(-5px);}
+      .project-card img{width:100%;border-radius:12px;}
+      .project-info{padding:10px;text-align:center;}
+      .project-info a{color:var(--text);text-decoration:none;font-weight:500;}
+      .project-info a:hover{color:var(--primary);}
+    </style>
+
+    <!-- Portfolio Filtering JS -->
+    <script>
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-card');
+      buttons.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          document.querySelector('.filter-btn.active').classList.remove('active');
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          cards.forEach(card=>{
+            if(filter==='all'||card.classList.contains(filter)){card.style.display='block';}
+            else{card.style.display='none';}
+          });
+        });
+      });
+    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -446,7 +254,7 @@
         <div class="row" data-aos="fade-in">
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
-              <div class="address"><i class="bi bi-geo-alt"></i><h4>Location:</h4><p>Egypt, Assiut</p></div>
+              <div class="address"><i class="bi bi-geo-alt"></i><h4>Location:</h4><p>Egypt , Assiut</p></div>
               <div class="email"><i class="bi bi-envelope"></i><h4>Email:</h4><p>Mohammedrostom011@gmail.com</p></div>
               <div class="phone"><i class="bi bi-phone"></i><h4>Call:</h4><p>01033251239</p></div>
               <div class="phone"><a href="https://wa.me/qr/YHEUJE6FI5P5E1" target="_blank"><i class="bi bi-whatsapp"></i><h4>WhatsApp:</h4><p>WhatsApp Contact</p></a></div>
@@ -473,10 +281,27 @@
   <!-- Footer -->
   <footer id="footer">
     <div class="container">
-      <div class="copyright">&copy; 2024 <strong>Mohammed Ali</strong></div>
-      <div class="credits">Designed by <a href="#">Mohammed Rostom</a></div>
+      <div class="copyright">&copy; Copyright <strong><span>2024</span></strong></div>
+      <div class="credits">Designed by <a href="https://bootstrapmade.com/">MohammedRostom</a></div>
     </div>
   </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
